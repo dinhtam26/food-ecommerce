@@ -19,6 +19,9 @@
     {{-- Toastr --}}
     <link rel="stylesheet" href="{{ asset('frontend/css/toastr.min.css') }}">
 
+
+    <link rel="stylesheet" href="//cdn.datatables.net/2.1.7/css/dataTables.dataTables.min.css">
+
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -77,6 +80,7 @@
     {{-- Toastr --}}
     <script src="{{ asset('frontend/js/toastr.min.js') }}"></script>
 
+    <script src="//cdn.datatables.net/2.1.7/js/dataTables.min.js"></script>
 
     <script>
         toastr.options.progressBar = true;
@@ -86,6 +90,8 @@
             @endforeach
         @endif
     </script>
+
+    @stack('scripts')
 </body>
 
 
