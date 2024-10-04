@@ -18,6 +18,9 @@
 
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
+
+    {{-- Toastr --}}
+    <link rel="stylesheet" href="{{ asset('frontend/css/toastr.min.css') }}">
     <!-- <link rel="stylesheet" href="css/rtl.css"> -->
 </head>
 
@@ -66,6 +69,18 @@
     <!--main/custom js-->
     <script src="{{ asset('frontend/js/main.js') }}"></script>
 
+    {{-- Toastr --}}
+    <script src="{{ asset('frontend/js/toastr.min.js') }}"></script>
+
+
+    <script>
+        toastr.options.progressBar = true;
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                toastr.error("{{ $error }}")
+            @endforeach
+        @endif
+    </script>
 </body>
 
 </html>

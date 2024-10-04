@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="{{ asset('admin/css/components.css') }}">
     <!-- Start GA -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+
+    {{-- Toastr --}}
+    <link rel="stylesheet" href="{{ asset('frontend/css/toastr.min.css') }}">
+
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -69,6 +73,19 @@
     <!-- Template JS File -->
     <script src="{{ asset('admin/js/scripts.js') }}"></script>
     <script src="{{ asset('admin/js/custom.js') }}"></script>
+
+    {{-- Toastr --}}
+    <script src="{{ asset('frontend/js/toastr.min.js') }}"></script>
+
+
+    <script>
+        toastr.options.progressBar = true;
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                toastr.error("{{ $error }}")
+            @endforeach
+        @endif
+    </script>
 </body>
 
 
